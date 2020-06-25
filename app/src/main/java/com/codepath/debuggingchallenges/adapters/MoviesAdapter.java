@@ -5,6 +5,8 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,12 +48,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return 0;
+        return movies.size();
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        Log.d("MoviesAdapter", "onCreateViewHolder");
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
@@ -65,6 +68,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(MoviesAdapter.ViewHolder viewHolder, int position) {
+        Log.d("MoviesAdapter", "onBindViewHolder");
 
         Movie movie = movies.get(position);
 
